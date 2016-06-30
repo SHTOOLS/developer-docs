@@ -2,9 +2,9 @@ SHTOOLS Release Procedure
 -------------------------
 
 1. Start by making all changes in the develop branch
-```
+~~~~
 git checkout develop`
-````
+~~~~
 2. Update the version number in main Makefile, update the file "VERSION”, and update the www/history.html.
 
 3. Update the documentation: 
