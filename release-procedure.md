@@ -12,7 +12,6 @@ SHTOOLS Release Procedure
 
     ```
     make doc
-
     ```
 4. Add and commit new files to develop:
 
@@ -21,8 +20,8 @@ SHTOOLS Release Procedure
     git add -A
     git commit
     git push
-
     ```
+    
 5. Merge develop into master and tag as new version:
 
     ```
