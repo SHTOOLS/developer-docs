@@ -13,7 +13,7 @@ SHTOOLS Release Procedure
     Makefile
     VERSION
     index.html
-    pyshtools/\_\_init\_\_.py
+    pyshtools/__init__.py
     www/history.html
     ```
 
