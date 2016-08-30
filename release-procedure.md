@@ -25,11 +25,11 @@ SHTOOLS Release Procedure
 4. Add and commit new files to develop:
 
     ```
-    git status
     git add -u
+    git status
     git commit
     ```
-5. Change ISRELEASED to True in setup.py with the very last commit:
+5. Change ISRELEASED to True in `setup.py` with the very last commit:
 
     ```
     git add setup.py && git commit -m 'Change ISRELEASED to True'
@@ -42,8 +42,8 @@ SHTOOLS Release Procedure
     git checkout master
     git merge develop
     git push
-    git tag -s v3.2 -m "Version 3.2"
-    git push origin v3.2
+    git tag -s vX.X -m "Version X.X"
+    git push origin vX.X
     ```
 
 7. Update gh-pages
