@@ -16,27 +16,29 @@ SHTOOLS Release Procedure
     pyshtools/__init__.py
     www/history.html
     ```
-
-3. Update the documentation:
+ 
+4. Update the documentation:
 
     ```
     make doc
     ```
-4. Add and commit new files to develop:
+    
+5. Add and commit new files to develop:
 
     ```
     git add -u
     git status
     git commit
     ```
-5. Change ISRELEASED to True in `setup.py` with the very last commit:
+    
+6. Change ISRELEASED to True in `setup.py` with the very last commit:
 
     ```
     git add setup.py && git commit -m 'Change ISRELEASED to True'
     git push
     ```
 
-6. Merge develop into master and tag as new version:
+7. Merge develop into master and tag as new version:
 
     ```
     git checkout master
@@ -58,8 +60,23 @@ SHTOOLS Release Procedure
     ```
 
 8. Create a github release. Go to https://github.com/SHTOOLS/SHTOOLS/releases and draft a new release. After this is done, a zipped archive will be sent to Zenodo, which will create a doi for citation. With this citation, you can then update the github release notes. Furthermore, this will send a zipped archive to the project page at Sourceforge.
-
-9. Update the homebrew installation by editing the file shtools.rb in the homebrew-shtools repo. First, change "url" to point to new version (the link can be found on the release page). Then, download the file the url points to, determine its SHA256 hash using "shasum -a 256 filename", and update the SHA256 hash. Finally,
+9. Update pypi. For the next steps to work, the file ```.pypirc``` with the username and password needs to be set (e.g. http://peterdowns.com/posts/first-time-with-pypi.html). Also ```pandoc``` needs to be installed with ```conda install -c conda-forge pandoc pypandoc```. A pypi upload can only be done once for a given version. It is therefore recommended to test it first on pypitest.
+    ```
+    python setup.py register -r pypitest
+    python setup.py sdist upload -r pypitest
+    pip uninstall pyshtools
+    pip install -i https://testpypi.python.org/pypi pyshtools
+    ```
+    If this works, you can do the same thing for pypi:
+    ```
+    python setup.py register -r pypi
+    python setup.py sdist upload -r pypi
+    pip uninstall pyshtools
+    pip install pyshtools
+    ```
+    After the package is updated, the pypi description should be edit directly on the webpage, to make sure that the relative links from the README.md are absolute links to github.
+    
+10. Update the homebrew installation by editing the file shtools.rb in the homebrew-shtools repo. First, change "url" to point to new version (the link can be found on the release page). Then, download the file the url points to, determine its SHA256 hash using "shasum -a 256 filename", and update the SHA256 hash. Finally,
 
     ```
     git add -u
@@ -67,4 +84,4 @@ SHTOOLS Release Procedure
     git push
     ```
 
-10. Update the documentation at shtools.ipgp.fr by copying the files index.html and www.
+11. Update the documentation at shtools.ipgp.fr by copying the files index.html and www.
