@@ -6,7 +6,7 @@ SHTOOLS Release Procedure
     ```
     git checkout develop
     ```
-    
+
 2. Update the version number in the files
 
     ```
@@ -28,10 +28,15 @@ SHTOOLS Release Procedure
     git status
     git add -u
     git commit
+    ```
+5. Change ISRELEASED to True in setup.py with the very last commit:
+
+    ```
+    git add setup.py && git commit -m 'Change ISRELEASED to True'
     git push
     ```
-    
-5. Merge develop into master and tag as new version:
+
+6. Merge develop into master and tag as new version:
 
     ```
     git checkout master
@@ -41,7 +46,7 @@ SHTOOLS Release Procedure
     git push origin v3.2
     ```
 
-6. Update gh-pages
+7. Update gh-pages
 
     ```
     git checkout gh-pages
@@ -52,9 +57,9 @@ SHTOOLS Release Procedure
     git push
     ```
 
-7. Create a github release. Go to https://github.com/SHTOOLS/SHTOOLS/releases and draft a new release. After this is done, a zipped archive will be sent to Zenodo, which will create a doi for citation. With this citation, you can then update the github release notes. Furthermore, this will send a zipped archive to the project page at Sourceforge.
+8. Create a github release. Go to https://github.com/SHTOOLS/SHTOOLS/releases and draft a new release. After this is done, a zipped archive will be sent to Zenodo, which will create a doi for citation. With this citation, you can then update the github release notes. Furthermore, this will send a zipped archive to the project page at Sourceforge.
 
-8. Update the homebrew installation by editing the file shtools.rb in the homebrew-shtools repo. First, change "url" to point to new version (the link can be found on the release page). Then, download the file the url points to, determine its SHA256 hash using "shasum -a 256 filename", and update the SHA256 hash. Finally,
+9. Update the homebrew installation by editing the file shtools.rb in the homebrew-shtools repo. First, change "url" to point to new version (the link can be found on the release page). Then, download the file the url points to, determine its SHA256 hash using "shasum -a 256 filename", and update the SHA256 hash. Finally,
 
     ```
     git add -u
@@ -62,4 +67,4 @@ SHTOOLS Release Procedure
     git push
     ```
 
-9. Update the documentation at shtools.ipgp.fr by copying the files index.html and www.
+10. Update the documentation at shtools.ipgp.fr by copying the files index.html and www.
