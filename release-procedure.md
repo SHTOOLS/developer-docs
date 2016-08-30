@@ -7,7 +7,7 @@ SHTOOLS Release Procedure
     git checkout develop
     ```
     
-2. Update the version number in the main Makefile, the file "VERSION”, pyshtools/\_\_init\_\_.py, and update www/history.html.
+2. Update the version number in the main Makefile, the file VERSION, index.html, pyshtools/\_\_init\_\_.py, and update www/history.html.
 3. Update the documentation:
 
     ```
