@@ -17,7 +17,7 @@ SHTOOLS Release Procedure
 
     ```
     git status
-    git add -A
+    git add -u
     git commit
     git push
     ```
@@ -38,7 +38,7 @@ SHTOOLS Release Procedure
     git checkout gh-pages
     git checkout master index.html
     git checkout master www
-    git add -A
+    git add -u
     git commit -m "Update web documentation for v3.2"
     git push
     ```
@@ -48,7 +48,7 @@ SHTOOLS Release Procedure
 8. Update the homebrew installation by editing the file shtools.rb in the homebrew-shtools repo. First, change "url" to point to new version (the link can be found on the release page). Then, download the file the url points to, determine its SHA256 hash using "shasum -a 256 filename", and update the SHA256 hash. Finally,
 
     ```
-    git add -A
+    git add -u
     git commit
     git push
     ```
