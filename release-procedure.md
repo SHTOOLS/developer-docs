@@ -17,10 +17,11 @@ SHTOOLS Release Procedure
     www/history.html
     ```
  
-4. Update the documentation:
+4. Update the documentation and notebook html files:
 
     ```
     make doc
+    make notebooks
     ```
     
 5. Add and commit new files to develop:
