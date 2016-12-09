@@ -16,30 +16,22 @@ SHTOOLS Release Procedure
     pyshtools/__init__.py
     www/history.html
     ```
- 
+
 4. Update the documentation and notebook html files:
 
     ```
     make doc
     make notebooks
     ```
-    
-5. Add and commit new files to develop:
+
+5. Change ISRELEASED to True in `setup.py`:
 
     ```
     git add -u
-    git status
-    git commit
+    git commit -m 'Change ISRELEASED to True'
     ```
     
-6. Change ISRELEASED to True in `setup.py` with the very last commit:
-
-    ```
-    git add setup.py && git commit -m 'Change ISRELEASED to True'
-    git push
-    ```
-
-7. Merge develop into master and tag as new version:
+6. Merge develop into master and tag as new version:
 
     ```
     git checkout master
@@ -56,11 +48,12 @@ SHTOOLS Release Procedure
     git checkout master index.html
     git checkout master www
     git add -u
-    git commit -m "Update web documentation for v3.2"
+    git commit -m "Update web documentation for vX.X"
     git push
     ```
 
-8. Create a github release. Go to https://github.com/SHTOOLS/SHTOOLS/releases and draft a new release. After this is done, a zipped archive will be sent to Zenodo, which will create a doi for citation. With this citation, you can then update the github release notes. Furthermore, this will send a zipped archive to the project page at Sourceforge.
+8. Create a github release. Go to https://github.com/SHTOOLS/SHTOOLS/releases and draft a new release. After this is done, a zipped archive will be sent to Zenodo, which will create a doi for citation. With this citation, you can then update the github release notes. 
+
 9. Update pypi. For the next steps to work, the file ```.pypirc``` with the username and password needs to be set (e.g. http://peterdowns.com/posts/first-time-with-pypi.html). Also ```pandoc``` needs to be installed with ```conda install -c conda-forge pandoc pypandoc```. A pypi upload can only be done once for a given version. It is therefore recommended to test it first on pypitest.
     ```
     python setup.py register -r pypitest
@@ -85,4 +78,15 @@ SHTOOLS Release Procedure
     git push
     ```
 
-11. Update the documentation at shtools.ipgp.fr by copying the files index.html and www.
+11. Update the documentation at shtools.oca.eu by copying the files index.html and www.
+
+12. Change ISRELEASED to False in `setup.py` in the develop branch:
+
+    ```
+    git checkout develop
+    # change ISRELEASED to False in setup.py
+    git add -u
+    git commit -m 'Change ISRELEASED to False'
+    git push
+    ```
+
