@@ -7,7 +7,7 @@ SHTOOLS Release Procedure
     git checkout develop
     ```
 
-2. Update the version number in the files
+2. Make sure the version number is up-to-date in the files
 
     ```
     Makefile
@@ -80,7 +80,17 @@ SHTOOLS Release Procedure
 
 11. Update the documentation at shtools.oca.eu by copying the files index.html and www.
 
-12. Change ISRELEASED to False in `setup.py` in the develop branch:
+12. Update the version number for the **next** release in the develop branch in the files
+
+    ```
+    Makefile
+    VERSION
+    index.html
+    pyshtools/__init__.py
+    www/history.html
+    ```
+
+13. Change ISRELEASED to False in `setup.py` in the develop branch:
 
     ```
     git checkout develop
