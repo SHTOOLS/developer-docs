@@ -59,7 +59,7 @@ SHTOOLS Release Procedure
     python setup.py register -r pypitest # first upload only
     python setup.py sdist upload -r pypitest
     pip uninstall pyshtools
-    pip install -i https://testpypi.python.org/pypi pyshtools
+    pip install -i https://testpypi.python.org/pypi/pyshtools/X.X pyshtools
     ```
     If this works, you can do the same thing for pypi:
     ```
