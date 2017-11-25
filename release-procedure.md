@@ -100,3 +100,15 @@ SHTOOLS Release Procedure
     git push
     ```
 
+14. Build wheels:
+
+    ```
+    git clone https://github.com/shtools/build-shtools.git
+    cd build-shtools
+    git submodule update --init
+    cd shtools
+    git checkout master
+    cd ..
+    git commit -a -m "Update SHTOOLS to master"
+    git push
+    ```
