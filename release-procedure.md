@@ -70,7 +70,6 @@ SHTOOLS Release Procedure
     pip uninstall pyshtools
     pip install pyshtools
     ```
-    After the package is updated, the pypi description should be edited directly on the webpage, to make sure that the relative links from the README.md are absolute links to github.
 
 10. Build the wheels:
 
