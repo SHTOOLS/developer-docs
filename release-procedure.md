@@ -56,7 +56,8 @@ SHTOOLS Release Procedure
 
 9. Update pypi. For the next steps to work, the file ```.pypirc``` with the username and password needs to be set (e.g. http://peterdowns.com/posts/first-time-with-pypi.html). Also ```pandoc``` needs to be installed with either ```conda install -c conda-forge pandoc pypandoc``` or ```pip install pypandoc```. A pypi upload can only be done once for a given version. It is therefore recommended to test it first on pypitest.
     ```
-    python setup.py sdist 
+    python setup.py sdist
+    gpg --detach-sign -a dist/pyshtools-x.x.tar.gz
     twine upload dist/* -r pypitest
     pip uninstall pyshtools
     pip install -i https://testpypi.python.org/pypi/pyshtools/X.X pyshtools
@@ -64,6 +65,7 @@ SHTOOLS Release Procedure
     If this works, you can do the same thing for pypi:
     ```
     python setup.py sdist
+    gpg --detach-sign -a dist/pyshtools-x.x.tar.gz
     twine upload dist/* -r pypi
     pip uninstall pyshtools
     pip install pyshtools
