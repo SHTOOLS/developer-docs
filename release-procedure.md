@@ -94,23 +94,17 @@ SHTOOLS Release Procedure
 
 12. Update the documentation at shtools.oca.eu by copying the files index.html and www.
 
-13. Update the version number for the **next** release in the `develop` branch in the files
+13. Update the version number for the **next** release in the `develop` branch in the files and change ISRELEASED to False in `setup.py` in the develop branch
 
     ```
+    git checkout develop
     Makefile
     VERSION
     index.html
     pyshtools/__init__.py
     www/history.html
-    ```
-
-14. Change ISRELEASED to False in `setup.py` in the develop branch:
-
-    ```
-    git checkout develop
     # change ISRELEASED to False in setup.py
     git add -u
     git commit -m 'Change ISRELEASED to False'
     git push
     ```
-
