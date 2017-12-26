@@ -35,8 +35,8 @@ SHTOOLS Release Procedure
 
     ```
     make www
-    git subtree push --prefix www origin www
     git checkout www
+    mv www/* .
     git add -u
     git commit -m "Update web documentation for vX.X"
     git push
