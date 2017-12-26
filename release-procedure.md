@@ -36,7 +36,8 @@ SHTOOLS Release Procedure
     ```
     make www
     git checkout www
-    mv www/* .
+    cp -r www/* .
+    rm -r www
     git add -u
     git commit -m "Update web documentation for vX.X"
     git push
