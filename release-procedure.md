@@ -51,7 +51,7 @@ SHTOOLS Release Procedure
     gpg --detach-sign -a dist/pyshtools-x.x.tar.gz
     twine upload dist/* -r pypitest
     pip uninstall pyshtools
-    pip install -i https://testpypi.python.org/pypi/pyshtools/X.X pyshtools
+    pip install -i https://test.pypi.org/pypi pyshtools --no-binary pyshtools
     ```
     If this works, you can do the same thing for pypi:
     ```
