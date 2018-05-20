@@ -72,6 +72,11 @@ SHTOOLS Release Procedure
     git checkout master
     cd ..
     git commit -a -m "Update SHTOOLS to master"
+    # if needed, also update multibuild
+    # cd shtools
+    # git checkout master
+    # cd ..
+    # git commit -a -m "Update multibuild to master"
     git push
     ```
 
