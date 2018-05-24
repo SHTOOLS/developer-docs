@@ -70,13 +70,10 @@ SHTOOLS Release Procedure
     git submodule update --init
     cd shtools
     git checkout master
+    cd ../multibuild
+    git checkout master
     cd ..
-    git commit -a -m "Update SHTOOLS to master"
-    # if needed, also update multibuild
-    # cd shtools
-    # git checkout master
-    # cd ..
-    # git commit -a -m "Update multibuild to master"
+    git commit -a -m "Update shtools and multibuild to master"
     git push
     ```
 
