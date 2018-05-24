@@ -67,12 +67,7 @@ SHTOOLS Release Procedure
     ```
     git clone https://github.com/shtools/build-shtools.git
     cd build-shtools
-    git submodule update --init
-    cd shtools
-    git checkout master
-    cd ../multibuild
-    git checkout master
-    cd ..
+    git submodule update --init --remote
     git commit -a -m "Update shtools and multibuild to master"
     git push
     ```
