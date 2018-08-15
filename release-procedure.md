@@ -13,6 +13,7 @@ SHTOOLS Release Procedure
 2. Update the documentation and notebook html files:
 
     ```
+    make remove-doc
     make doc
     make notebooks
     ```
