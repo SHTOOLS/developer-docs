@@ -14,7 +14,7 @@ SHTOOLS Release Procedure
 2. Update the documentation and notebook html files:
 
     ```
-    make remove-doc
+    make remove-doc # this ensures that the correct version number is written to the man pages
     make doc
     make notebooks
     ```
