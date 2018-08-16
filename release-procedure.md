@@ -33,7 +33,7 @@ SHTOOLS Release Procedure
     git push origin master vX.X
     ```
 
-4. Create static web pages for use on a different server
+4. Create static web pages for use on github pages
 
     ```
     make www
@@ -45,7 +45,7 @@ SHTOOLS Release Procedure
     git push
     ```
 
-5. Create a github release. Go to https://github.com/SHTOOLS/SHTOOLS/releases and draft a new release. After this is done, a zipped archive will be sent to Zenodo, which will create a doi for citation. With this citation, you can then update the github release notes. 
+5. Create a github release. Go to https://github.com/SHTOOLS/SHTOOLS/releases and draft a new release. After this is done, a zipped archive will be sent to Zenodo, which will create a doi for citation.
 
 6. Update pypi. For the next steps to work, the file ```.pypirc``` with the username and password needs to be set (see [this link](https://packaging.python.org/guides/migrating-to-pypi-org/#uploading)). Also ```pandoc``` needs to be installed with either ```conda install -c conda-forge pandoc pypandoc``` or ```pip install pypandoc```. A pypi upload can only be done once for a given version. It is therefore recommended to test it first on pypitest.
     ```
@@ -84,7 +84,7 @@ SHTOOLS Release Procedure
 
 9. Update the documentation at shtools.oca.eu by copying the folder www.
 
-10. Update the version number for the **next** release in the `develop` branch, anc change ISRELEASED to False in `setup.py`
+10. Update the version number for the **next** release in the `develop` branch, and change ISRELEASED to False in `setup.py`
 
     ```
     git checkout develop
