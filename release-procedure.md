@@ -67,7 +67,7 @@ SHTOOLS Release Procedure
 7. Build the wheels:
 
     ```
-    git clone https://github.com/shtools/build-shtools.git
+    git clone https://github.com/shtools/build-shtools.git # only necessary the first time.
     cd build-shtools
     git submodule update --init --remote
     git commit -a -m "Update shtools and multibuild to master"
