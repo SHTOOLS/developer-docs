@@ -8,7 +8,7 @@ SHTOOLS Release Procedure
     VERSION
     pyshtools/__init__.py
     docs/_data/sidebars/mydoc_sidebar.yml
-    docs/pages/mydoc/release-notes-v4.md # go to zenodo, click on new version, and click on the button 'reserved doi'.
+    docs/pages/mydoc/release-notes-v4.md
     ```
 
 2. Update the documentation and notebook html files:
