@@ -19,13 +19,13 @@ SHTOOLS Release Procedure
     make notebooks
     ```
 
-3. Commit these changes to `develop`, merge develop into master, change ISRELEASED to true, and tag as new version:
+3. Commit these changes to `develop`, merge develop into master, change ISRELEASED to true on master, and tag as new version:
 
     ```
     git push origin develop
     git checkout master
     git merge develop
-    # change ISRELEASED to True in setup.py
+    # change ISRELEASED to True in setup.py on master
     git add -u
     git commit -m 'Change ISRELEASED to True'
     git push origin master
