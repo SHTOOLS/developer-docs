@@ -33,7 +33,9 @@ SHTOOLS Release Procedure
     git push origin master vX.X
     ```
 
-4. Create static web pages for use on github pages
+4. Create a github release. Go to https://github.com/SHTOOLS/SHTOOLS/releases, click on the latest tag, and draft a new release. After this is done, a zipped archive will be sent to [Zenodo](https://doi.org/10.5281/zenodo.592762), which will create a doi for citation.
+
+5. Github hosts the shtools web page directly from files found in the `docs` folder. To create static web pages for use on other sites, follow these steps:
 
     ```
     make www
@@ -45,23 +47,21 @@ SHTOOLS Release Procedure
     git push
     ```
 
-5. Create a github release. Go to https://github.com/SHTOOLS/SHTOOLS/releases and draft a new release. After this is done, a zipped archive will be sent to Zenodo, which will create a doi for citation.
-
 6. Update pypi. For the next steps to work, the file ```.pypirc``` with the username and password needs to be set (see [this link](https://packaging.python.org/guides/migrating-to-pypi-org/#uploading)). Also ```pandoc``` needs to be installed with either ```conda install -c conda-forge pandoc pypandoc``` or ```pip install pypandoc```. A pypi upload can only be done once for a given version. It is therefore recommended to test it first on pypitest.
     ```
-    python setup.py sdist
+    python3 setup.py sdist
     gpg --detach-sign -a dist/pyshtools-x.x.tar.gz
     twine upload dist/* -r pypitest
-    pip uninstall pyshtools
-    pip install -i https://test.pypi.org/pypi pyshtools --no-binary pyshtools
+    pip3 uninstall pyshtools
+    pip3 install -i https://test.pypi.org/pypi pyshtools --no-binary pyshtools
     ```
     If this works, you can do the same thing for pypi:
     ```
-    python setup.py sdist
+    python3 setup.py sdist
     gpg --detach-sign -a dist/pyshtools-x.x.tar.gz
     twine upload dist/* -r pypi
-    pip uninstall pyshtools
-    pip install pyshtools
+    pip3 uninstall pyshtools
+    pip3 install pyshtools
     ```
 
 7. Build the wheels:
