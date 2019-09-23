@@ -82,9 +82,7 @@ SHTOOLS Release Procedure
     git push
     ```
 
-9. Update the documentation at shtools.oca.eu by copying the folder www.
-
-10. Update the version number for the **next** release in the `develop` branch, and change ISRELEASED to False in `setup.py`
+9. Update the version number for the **next** release in the `develop` branch, and change ISRELEASED to False in `setup.py`
 
     ```
     git checkout develop
