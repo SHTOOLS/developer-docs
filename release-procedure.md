@@ -35,19 +35,7 @@ SHTOOLS Release Procedure
 
 4. Create a github release. Go to https://github.com/SHTOOLS/SHTOOLS/releases, click on the latest tag, and draft a new release. After this is done, a zipped archive will be sent to [Zenodo](https://doi.org/10.5281/zenodo.592762), which will create a doi for citation.
 
-5. Github hosts the shtools web page directly from files found in the `docs` folder. To create static web pages for use on other sites, follow these steps:
-
-    ```
-    make www
-    git checkout www
-    cp -r www/* .
-    rm -r www
-    git add -u
-    git commit -m "Update web documentation for vX.X"
-    git push
-    ```
-
-6. Update pypi. For the next steps to work, the file ```.pypirc``` with the username and password needs to be set (see [this link](https://packaging.python.org/guides/migrating-to-pypi-org/#uploading)). Also ```pandoc``` needs to be installed with either ```conda install -c conda-forge pandoc pypandoc``` or ```pip install pypandoc```. A pypi upload can only be done once for a given version. It is therefore recommended to test it first on pypitest.
+5. Update pypi. For the next steps to work, the file ```.pypirc``` with the username and password needs to be set (see [this link](https://packaging.python.org/guides/migrating-to-pypi-org/#uploading)). Also ```pandoc``` needs to be installed with either ```conda install -c conda-forge pandoc pypandoc``` or ```pip install pypandoc```. A pypi upload can only be done once for a given version. It is therefore recommended to test it first on pypitest.
     ```
     python3 setup.py sdist
     gpg --detach-sign -a dist/pyshtools-x.x.tar.gz
@@ -64,7 +52,7 @@ SHTOOLS Release Procedure
     pip3 install pyshtools
     ```
 
-7. Build the wheels:
+6. Build the wheels:
 
     ```
     git clone https://github.com/shtools/build-shtools.git # only necessary the first time.
@@ -74,7 +62,7 @@ SHTOOLS Release Procedure
     git push
     ```
 
-8. Update the homebrew installation by editing the file shtools.rb in the homebrew-shtools repo. First, change "url" to point to the new version (the link can be found on the release page). Then, download the file the url points to, determine its SHA256 hash using "shasum -a 256 filename", and update the SHA256 hash. Finally,
+7. Update the homebrew installation by editing the file shtools.rb in the homebrew-shtools repo. First, change "url" to point to the new version (the link can be found on the release page). Then, download the file the url points to, determine its SHA256 hash using "shasum -a 256 filename", and update the SHA256 hash. Finally,
 
     ```
     git add -u
@@ -82,7 +70,7 @@ SHTOOLS Release Procedure
     git push
     ```
 
-9. Update the version number for the **next** release in the `develop` branch, and change ISRELEASED to False in `setup.py`
+8. Update the version number for the **next** release in the `develop` branch, and change ISRELEASED to False in `setup.py`
 
     ```
     git checkout develop
