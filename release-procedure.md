@@ -9,13 +9,15 @@ SHTOOLS Release Procedure
     pyshtools/__init__.py
     docs/_data/sidebars/mydoc_sidebar.yml
     docs/pages/mydoc/release-notes-v4.md
+    cd docs; bundle update; cd ..
     ```
 
 2. Update the documentation and notebook html files:
 
     ```
-    make remove-doc # this ensures that the correct version number is written to the man pages
+    make remove-doc  # this ensures that the correct version number is written to the man pages
     make doc
+    make remove-notebooks  # remove the old html versions of the notebooks
     make notebooks
     ```
 
