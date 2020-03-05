@@ -17,22 +17,20 @@ SHTOOLS Release Procedure
     ```
     make remove-doc  # this ensures that the correct version number is written to the man pages
     make doc
-    make remove-notebooks  # remove the old html versions of the notebooks
+    make remove-notebooks  # if needed, remove the old html versions of the notebooks
     make notebooks
     ```
 
-3. Commit these changes to `develop`, merge develop into master, change ISRELEASED to true on master, and tag as new version:
+3. Commit these changes to `develop`, make a pull request and merge develop into master, change ISRELEASED to true in the file `setup.py` on master if it is not already set, and tag as new version:
 
     ```
-    git push origin develop
+    # Merge develop into master using a pull request.
+    # Change ISRELEASED to True in setup.py on master if not already set: edit the raw file on github.
+    # Update master on your personal repo
     git checkout master
-    git merge develop
-    # change ISRELEASED to True in setup.py on master
-    git add -u
-    git commit -m 'Change ISRELEASED to True'
-    git push origin master
+    git pull shtools master  # shtools is the name of the remote repo on github
     git tag -s vX.X -m "Version X.X"
-    git push origin master vX.X
+    git push shtools master vX.X
     ```
 
 4. Create a github release. Go to https://github.com/SHTOOLS/SHTOOLS/releases, click on the latest tag, and draft a new release. After this is done, a zipped archive will be sent to [Zenodo](https://doi.org/10.5281/zenodo.592762), which will create a doi for citation.
