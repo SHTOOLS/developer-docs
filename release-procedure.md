@@ -5,7 +5,7 @@ SHTOOLS Release Procedure
 
     ```
     Makefile
-    VERSION
+    VERSION.txt
     pyshtools/__init__.py
     docs/_data/sidebars/mydoc_sidebar.yml
     docs/pages/mydoc/release-notes-v4.md
@@ -76,7 +76,7 @@ SHTOOLS Release Procedure
     git checkout develop
     # change version numbers for the files
     Makefile
-    VERSION
+    VERSION.txt
     pyshtools/__init__.py
     docs/_data/sidebars/mydoc_sidebar.yml
     # change ISRELEASED to False in setup.py
