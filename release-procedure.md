@@ -8,7 +8,9 @@ SHTOOLS Release Procedure
     VERSION.txt
     pyshtools/__init__.py
     docs/_data/sidebars/mydoc_sidebar.yml
+    docs/_data/sidebars/fortran_sidebar.yml
     docs/pages/mydoc/release-notes-v4.md
+    docs/pages/mydoc/fortran-release-notes-v4.md
     cd docs; bundle update; cd ..
     ```
 
