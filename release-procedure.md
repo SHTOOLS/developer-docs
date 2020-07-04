@@ -14,13 +14,11 @@ SHTOOLS Release Procedure
     cd docs; bundle update; cd ..
     ```
 
-2. Update the documentation and notebook html files:
+2. Update the documentation files:
 
     ```
     make remove-doc  # this ensures that the correct version number is written to the man pages
     make doc
-    make remove-notebooks  # if needed, remove the old html versions of the notebooks
-    make notebooks
     ```
 
 3. Commit these changes to `develop`, make a pull request and merge develop into master, change ISRELEASED to true in the file `setup.py` on master if it is not already set, and tag as new version:
