@@ -5,8 +5,6 @@ SHTOOLS Release Procedure
 
     ```
     Makefile
-    VERSION.txt
-    pyshtools/__init__.py
     docs/_data/sidebars/mydoc_sidebar.yml
     docs/_data/sidebars/fortran_sidebar.yml
     docs/pages/mydoc/release-notes-v4.md
@@ -21,11 +19,10 @@ SHTOOLS Release Procedure
     make doc
     ```
 
-3. Commit these changes to `develop`, make a pull request and merge develop into master, change ISRELEASED to true in the file `setup.py` on master if it is not already set, and tag as new version:
+3. Commit these changes to `develop`, make a pull request and merge develop into master, and tag as new version:
 
     ```
     # Merge develop into master using a pull request.
-    # Change ISRELEASED to True in setup.py on master if not already set: edit the raw file on github.
     # Update master on your personal repo
     git checkout master
     git pull shtools master  # shtools is the name of the remote repo on github
@@ -76,11 +73,9 @@ SHTOOLS Release Procedure
     git checkout develop
     # change version numbers for the files
     Makefile
-    VERSION.txt
-    pyshtools/__init__.py
     docs/_data/sidebars/mydoc_sidebar.yml
-    # change ISRELEASED to False in setup.py
+    docs/_data/sidebars/fortran_sidebar.yml
     git add -u
-    git commit -m 'Change ISRELEASED to False'
+    git commit -m 'Update version numbers on develop for next release cycle'
     git push
     ```
