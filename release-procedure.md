@@ -67,7 +67,7 @@ SHTOOLS Release Procedure
     git push
     ```
 
-8. Update the version number for the **next** release in the `develop` branch, and change ISRELEASED to False in `setup.py`
+8. Update the version number for the **next** release in the `develop` branch
 
     ```
     git checkout develop
