@@ -4,7 +4,7 @@ SHTOOLS Release Procedure
 1. Start by making all changes in the develop branch. First, make sure the version number (and other meta-data) is up-to-date in the files
 
     ```
-    Makefile  # updat version number
+    Makefile  # update version number
     docs/_data/sidebars/mydoc_sidebar.yml  # update version number
     docs/_data/sidebars/fortran_sidebar.yml  # update version number
     docs/pages/mydoc/release-notes-v4.md  # update release notes
