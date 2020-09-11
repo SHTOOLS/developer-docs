@@ -4,33 +4,33 @@ SHTOOLS Release Procedure
 1. Start by making all changes in the develop branch. First, make sure the version number (and other meta-data) is up-to-date in the files
 
     ```
-    Makefile
-    docs/_data/sidebars/mydoc_sidebar.yml
-    docs/_data/sidebars/fortran_sidebar.yml
-    docs/pages/mydoc/release-notes-v4.md
-    docs/pages/mydoc/fortran-release-notes-v4.md
+    Makefile  # updat version number
+    docs/_data/sidebars/mydoc_sidebar.yml  # update version number
+    docs/_data/sidebars/fortran_sidebar.yml  # update version number
+    docs/pages/mydoc/release-notes-v4.md  # update release notes
+    docs/pages/mydoc/fortran-release-notes-v4.md  # update release notes
+    requirements.txt  # update version numbers of python dependencies
+    requirements-dev.txt  # update version numbers of python dependencies
+    environment.yml  # update version numbers of python dependencies
+    binder/environment.yml  # update version numbers of python dependencies, as well as pyshtools version number
     cd docs; bundle update; cd ..
     ```
 
 2. Update the documentation files:
 
     ```
-    make remove-doc  # this ensures that the correct version number is written to the man pages
+    make remove-doc  # this ensures that the correct version number is written to the fortran man pages
     make doc
     ```
 
-3. Commit these changes to `develop`, make a pull request and merge develop into master, and tag as new version:
+3. Commit these changes to `develop`, make a pull request and merge develop into master. Then update master on your personal repo.
 
     ```
-    # Merge develop into master using a pull request.
-    # Update master on your personal repo
     git checkout master
     git pull shtools master  # shtools is the name of the remote repo on github
-    git tag -s vX.X -m "Version X.X"
-    git push shtools master vX.X
     ```
 
-4. Create a github release. Go to https://github.com/SHTOOLS/SHTOOLS/releases, click on the latest tag, and draft a new release. After this is done, a zipped archive will be sent to [Zenodo](https://doi.org/10.5281/zenodo.592762), which will create a doi for citation.
+4. Create a github release. Go to https://github.com/SHTOOLS/SHTOOLS/releases, create a tag of the form vX.X, and draft a new release. After this is done, a zipped archive will be sent to [Zenodo](https://doi.org/10.5281/zenodo.592762), which will create a doi for citation.
 
 5. Update pypi. For the next steps to work, the file ```.pypirc``` with the username and password needs to be set (see [this link](https://packaging.python.org/guides/migrating-to-pypi-org/#uploading)). Also ```pandoc``` needs to be installed with either ```conda install -c conda-forge pandoc pypandoc``` or ```pip install pypandoc```. A pypi upload can only be done once for a given version. It is therefore recommended to test it first on pypitest.
     ```
