@@ -1,25 +1,25 @@
 SHTOOLS Release Procedure
 -------------------------
 
-1. Start by making all changes in the develop branch. First, make sure the version number (and other meta-data) is up-to-date in the files
+1. Start by making all changes in the develop branch. First, make sure the version number (and other meta-data) is up-to-date in the following files:
 
     ```
-    Makefile  # update version number
-    docs/_data/sidebars/mydoc_sidebar.yml  # update version number
-    docs/_data/sidebars/fortran_sidebar.yml  # update version number
+    Makefile  # update shtools version number
+    docs/_data/sidebars/mydoc_sidebar.yml  # update shtools version number
+    docs/_data/sidebars/fortran_sidebar.yml  # update shtools version number
     docs/pages/mydoc/release-notes-v4.md  # update release notes
     docs/pages/mydoc/fortran-release-notes-v4.md  # update release notes
-    requirements.txt  # update version numbers of python dependencies
-    requirements-dev.txt  # update version numbers of python dependencies
-    environment.yml  # update version numbers of python dependencies
-    binder/environment.yml  # update version numbers of python dependencies, as well as pyshtools version number
+    requirements.txt  # update version numbers of the python dependencies, if necessary
+    requirements-dev.txt  # update version numbers of the python dependencies, if necessary
+    environment.yml  # update version numbers of the python dependencies, if necesseary
+    binder/environment.yml  # update version numbers of the python dependencies, as well as pyshtools version number
     cd docs; bundle update; cd ..
     ```
 
 2. Update the documentation files:
 
     ```
-    make remove-doc  # this ensures that the correct version number is written to the fortran man pages
+    make remove-doc  # this ensures that the correct version number will be written to the fortran man pages
     make doc
     ```
 
@@ -34,13 +34,14 @@ SHTOOLS Release Procedure
     git pull shtools master --tags # shtools is the name of the remote repo on github
     ```
     
-6. Update pypi. For the next steps to work, the file ```.pypirc``` with the username and password needs to be set (see [this link](https://packaging.python.org/guides/migrating-to-pypi-org/#uploading)). Also ```pandoc``` needs to be installed with either ```conda install -c conda-forge pandoc pypandoc``` or ```pip install pypandoc```. A pypi upload can only be done once for a given version. It is therefore recommended to test it first on pypitest.
+6. Update pypi. For the next steps to work, the file ```.pypirc``` with the username and password needs to be set (see [this link](https://packaging.python.org/guides/migrating-to-pypi-org/#uploading)). ```pandoc``` needs to be installed with either ```conda install -c conda-forge pypandoc``` or ```pip install pypandoc```, and ```twine``` neeeds to be installed by ```pip install twine```. A pypi upload can only be done once for a given version. It is therefore recommended to test it first on pypitest.
     ```
     python3 setup.py sdist
     gpg --detach-sign -a dist/pyshtools-x.x.tar.gz
     twine upload dist/* -r pypitest
     pip3 uninstall pyshtools
-    pip3 install -i https://test.pypi.org/pypi pyshtools --no-binary pyshtools
+    # Inspect the pypi page at https://test.pypi.org/project/pyshtools/4.7/ for errors in the project description or metadata
+    pip3 install -i https://test.pypi.org/simple pyshtools --no-binary pyshtools
     ```
     If this works, you can do the same thing for pypi:
     ```
