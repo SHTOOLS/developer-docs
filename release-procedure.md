@@ -71,7 +71,9 @@ SHTOOLS Release Procedure
     git push
     ```
 
-9. Update the version number for the **next** release in the `develop` branch
+9. Update the web documentation on shtools.oca.eu using private gitlab repo. 
+
+10. Update the version number for the **next** release in the `develop` branch
 
     ```
     git checkout develop
