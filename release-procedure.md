@@ -48,6 +48,7 @@ SHTOOLS Release Procedure
     python3 setup.py sdist
     gpg --detach-sign -a dist/pyshtools-x.x.tar.gz
     twine upload dist/* -r pypi
+    # As a sanity check, inspect the pypi project page at https://pypi.org/project/pyshtools/
     pip3 uninstall pyshtools
     pip3 install pyshtools
     ```
