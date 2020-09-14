@@ -43,7 +43,7 @@ SHTOOLS Release Procedure
     # Inspect the pypi page at https://test.pypi.org/project/pyshtools/4.7/ for errors in the project description or metadata
     pip3 install -i https://test.pypi.org/simple pyshtools --no-binary pyshtools
     ```
-    If this works, you can do the same thing for pypi:
+    Then, in a directory that is different from your local pyshtools repo, run a couple of quick tests. If everything works, you can then upload everything to pypi:
     ```
     python3 setup.py sdist
     gpg --detach-sign -a dist/pyshtools-x.x.tar.gz
