@@ -9,7 +9,7 @@ SHTOOLS Release Procedure
     docs/_data/sidebars/mydoc_sidebar.yml  # update shtools version number
     docs/_data/sidebars/fortran_sidebar.yml  # update shtools version number
     docs/pages/mydoc/release-notes-v4.md  # update release notes
-    docs/pages/mydoc/fortran-release-notes-v4.md  # update release notes
+    docs/pages/fortran/fortran-release-notes-v4.md  # update release notes
     requirements.txt  # update version numbers of the python dependencies, if necessary
     requirements-dev.txt  # update version numbers of the python dependencies, if necessary
     environment.yml  # update version numbers of the python dependencies, if necesseary
