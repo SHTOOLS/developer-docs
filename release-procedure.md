@@ -5,6 +5,7 @@ SHTOOLS Release Procedure
 
     ```
     Makefile  # update shtools version number
+    fpm/toml  # update shtools version number
     docs/_data/sidebars/mydoc_sidebar.yml  # update shtools version number
     docs/_data/sidebars/fortran_sidebar.yml  # update shtools version number
     docs/pages/mydoc/release-notes-v4.md  # update release notes
